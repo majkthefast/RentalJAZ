@@ -1,11 +1,21 @@
 package pl.pjatk.RentalService.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "Movie", description = "Movie from DB")
 public class Movie {
+    @ApiModelProperty(value = "Movie id",required = true)
     private Integer id;
+    @ApiModelProperty(value = "Movie title",required = true)
     private String title;
+    @ApiModelProperty(value = "Movie description",required = false)
     private String description;
+    @ApiModelProperty(value = "Movie genre",required = false)
     private Genres genre;
+    @ApiModelProperty(value = "Is movie available",required = false)
     private Boolean isAvailable = false;
+
 
     public Movie(Integer id, String title, String description, Genres genre, Boolean isAvailable) {
         this.id = id;
